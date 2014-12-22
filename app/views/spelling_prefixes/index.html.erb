@@ -1,1 +1,35 @@
-<h2>SpellingPrefixesController#index</h2>
+<div class="contextual">
+  <%= link_to_if_authorized(l(:label_spelling_prefixes_new),
+      {:action => 'new', :project_id => @project},
+      :class => 'icon icon-add') %>
+</div>
+
+<h2><%=h l(:label_spelling) %></h2>
+
+<% if @spelling_prefixes.blank? %>
+  <p class="nodata"><%= l(:label_no_data) %></p>
+<% else %>
+  <table class="list">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th><%=h l(:field_yomi) %></th>
+        <th><%=h l(:field_spelling_ok) %></th>
+        <th><%=h l(:field_spelling_ng) %></th>
+        <th><%=h l(:field_example) %></th>
+        <th><%=h l(:field_exception) %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @spelling_prefixes.each do |prefix| %>
+        <tr class="<%= cycle('odd', 'even') %>">
+          <td><%= prefix.yomi %></td>
+          <td><%= prefix.spelling_ok %></td>
+          <td><%= prefix.spelling_ng %></td>
+          <td><%= prefix.example %></td>
+          <td><%= prefix.exception %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
