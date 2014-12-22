@@ -5,4 +5,16 @@ Redmine::Plugin.register :redmine_correct_spelling do
   version '0.0.1'
   url 'https://github.com/kobat987/'
   author_url 'http://otsukare-tion.com/'
+  
+  project_module :spelling do
+  permission :view_spelling_prefix, :spelling_prefixes => [:index]
+  permission :manage_spelling_prefix,
+    :spelling_prefixes => [:new, :edit, :create, :show, :update, :destroy],
+    :require => :member
+  end
+
+  menu :project_menu, :spelling,
+       {:controller => 'spelling_prefixes', :action => 'index'},
+       :param => :project_id
+
 end
