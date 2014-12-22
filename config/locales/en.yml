@@ -1,3 +1,5 @@
-# English strings go here for Rails i18n
 en:
-  # my_label: "My label"
+  label_spelling: Correct Spelling Dictionary
+  project_module_spelling: Correct Spelling Dictionary plugin
+  permission_view_spelling_prefix: View Spelling Dictionary
+  permission_manage_spelling_prefix: Manage Spelling Dictionary
