@@ -2,6 +2,7 @@ class SpellingPrefixesController < ApplicationController
   unloadable
   menu_item :spelling
   before_filter :find_project, :authorize
+  before_filter :find_spelling_prefix, :except => [:index, :new, :create]
 
   def index
     @spelling_prefixes = SpellingPrefix.find(
@@ -22,10 +23,24 @@ class SpellingPrefixesController < ApplicationController
     end
   end
 
+  def update
+    @spelling_prefix.attributes = params[:spelling_prefix]
+    if @spelling_prefix.save
+      flash[:notice] = l(:notice_successful_update)
+      redirect_to project_spelling_prefixes_path(@project)
+    end
+  end
+
+  def destroy
+    @spelling_prefix.destroy
+    redirect_to project_spelling_prefixes_path(@project)
+  end
+
   def show
   end
 
   def edit
+  
   end
   
 private
@@ -34,6 +49,11 @@ private
     @project = Project.find(params[:project_id])
   rescue ActiveRecord::RecordNotFound
     render_404
+  end
+
+  def find_spelling_prefix
+    @spelling_prefix = SpellingPrefix.find_by_id(params[:id])
+    render_404 unless @spelling_prefix
   end
 
 end

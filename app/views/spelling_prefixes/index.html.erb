@@ -18,6 +18,7 @@
         <th><%=h l(:field_spell_ng) %></th>
         <th><%=h l(:field_example) %></th>
         <th><%=h l(:field_exception) %></th>
+        <th colspan="2"><%=h l(:field_manage) %></th>
       </tr>
     </thead>
     <tbody>
@@ -29,6 +30,10 @@
           <td><%= prefix.spell_ng %></td>
           <td><%= prefix.example %></td>
           <td><%= prefix.exception %></td>
+          <td><%= link_to l(:button_edit),
+                edit_project_spelling_prefix_path(@project, prefix),
+                :class => 'icon icon-edit' %></td>
+          <td><%=delete_link project_spelling_prefix_path(@project, prefix) %></td>
         </tr>
       <% end %>
     </tbody>

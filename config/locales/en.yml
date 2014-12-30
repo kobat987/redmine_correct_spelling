@@ -3,3 +3,10 @@ en:
   project_module_spelling: Correct Spelling Dictionary plugin
   permission_view_spelling_prefix: View Spelling Dictionary
   permission_manage_spelling_prefix: Manage Spelling Dictionary
+
+  field_yomi: yomi
+  field_spell_ok: OK Spelling
+  field_spell_ng: NG Spelling
+  field_example: Example
+  field_exception: Exception
+  field_manage: Management
