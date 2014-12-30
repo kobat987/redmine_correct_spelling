@@ -1,8 +1,10 @@
 <%= error_messages_for 'spelling_prefix' %>
-<div class="box">
-  <p><%= form.text_field :yomi, :size => 100, :required => true %></p>
-  <p><%= form.text_field :spell_ok, :size => 100, :required => false %></p>
-  <p><%= form.text_field :spell_ng, :size => 100, :required => false %></p>
-  <p><%= form.text_field :example, :size => 100, :required => false %></p>
-  <p><%= form.text_field :exception, :size => 100, :required => false %></p>
-</div>
+  <table class="list" style="width:1200px;">
+        <tr>
+          <td><%= form.text_field :yomi, :size => 28, :required => true %></td>
+          <td><span style="color:#5BCE14;"><%= form.text_field :spell_ok, :size => 29, :required => true %></span></td>
+          <td><span style="color:#E80000;"><%= form.text_field :spell_ng, :size => 29, :required => false %></span></td>
+          <td><%= form.text_field :example, :size => 45, :required => false %></td>
+          <td><%= form.text_field :exception, :size => 45, :required => false %></td>
+        </tr>
+  </table>

@@ -12,27 +12,28 @@
   <table class="list">
     <thead>
       <tr>
-        <th>#</th>
-        <th><%=h l(:field_yomi) %></th>
-        <th><%=h l(:field_spell_ok) %></th>
-        <th><%=h l(:field_spell_ng) %></th>
+        <th style="width:50px;">#</th>
+        <th style="width:50px;">&nbsp;</th>
+        <th style="width:100px;"><%=h l(:field_yomi) %></th>
+        <th style="width:200px;"><span style="color:#5BCE14;"><%=h l(:field_spell_ok) %></span></th>
+        <th style="width:200px;"><span style="color:#E80000;"><%=h l(:field_spell_ng) %></span></th>
         <th><%=h l(:field_example) %></th>
         <th><%=h l(:field_exception) %></th>
-        <th colspan="2"><%=h l(:field_manage) %></th>
+        <th style="width:50px;">&nbsp;</th>
       </tr>
     </thead>
     <tbody>
       <% @spelling_prefixes.each do |prefix| %>
         <tr class="<%= cycle('odd', 'even') %>">
-          <td><%= prefix.project_id %></td>
+          <td><%= prefix.id %></td>
+          <td><%= link_to l(:button_edit),
+                edit_project_spelling_prefix_path(@project, prefix),
+                :class => 'icon icon-edit' %></td>
           <td><%= prefix.yomi %></td>
           <td><%= prefix.spell_ok %></td>
           <td><%= prefix.spell_ng %></td>
           <td><%= prefix.example %></td>
           <td><%= prefix.exception %></td>
-          <td><%= link_to l(:button_edit),
-                edit_project_spelling_prefix_path(@project, prefix),
-                :class => 'icon icon-edit' %></td>
           <td><%=delete_link project_spelling_prefix_path(@project, prefix) %></td>
         </tr>
       <% end %>
