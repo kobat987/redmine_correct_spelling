@@ -1,0 +1,8 @@
+<%= error_messages_for 'spelling_prefix' %>
+<div class="box">
+  <p><%= form.text_field :yomi, :size => 100, :required => true %></p>
+  <p><%= form.text_field :spell_ok, :size => 100, :required => false %></p>
+  <p><%= form.text_field :spell_ng, :size => 100, :required => false %></p>
+  <p><%= form.text_field :example, :size => 100, :required => false %></p>
+  <p><%= form.text_field :exception, :size => 100, :required => false %></p>
+</div>

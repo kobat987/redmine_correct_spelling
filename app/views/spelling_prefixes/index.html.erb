@@ -14,8 +14,8 @@
       <tr>
         <th>#</th>
         <th><%=h l(:field_yomi) %></th>
-        <th><%=h l(:field_spelling_ok) %></th>
-        <th><%=h l(:field_spelling_ng) %></th>
+        <th><%=h l(:field_spell_ok) %></th>
+        <th><%=h l(:field_spell_ng) %></th>
         <th><%=h l(:field_example) %></th>
         <th><%=h l(:field_exception) %></th>
       </tr>
@@ -23,9 +23,10 @@
     <tbody>
       <% @spelling_prefixes.each do |prefix| %>
         <tr class="<%= cycle('odd', 'even') %>">
+          <td><%= prefix.project_id %></td>
           <td><%= prefix.yomi %></td>
-          <td><%= prefix.spelling_ok %></td>
-          <td><%= prefix.spelling_ng %></td>
+          <td><%= prefix.spell_ok %></td>
+          <td><%= prefix.spell_ng %></td>
           <td><%= prefix.example %></td>
           <td><%= prefix.exception %></td>
         </tr>

@@ -1,1 +1,5 @@
-<h2>SpellingPrefixesController#new</h2>
+<%= labelled_form_for :spelling_prefix, @spelling_prefix,
+    :url => project_spelling_prefixes_path(@project) do |f| %>
+  <%= render :partial => 'spelling_prefixes/form', :locals => {:form => f} %>
+  <%= f.submit l(:button_create) %>
+<% end %>

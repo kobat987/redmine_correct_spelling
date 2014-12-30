@@ -9,6 +9,17 @@ class SpellingPrefixesController < ApplicationController
   end
 
   def new
+    @spelling_prefix=SpellingPrefix.new()
+  end
+
+  def create
+    @spelling_prefix = SpellingPrefix.new(params[:spelling_prefix])
+    @spelling_prefix.project_id = @project.id
+    @spelling_prefix.assigned = 0
+    if @spelling_prefix.save
+      flash[:notice] = l(:notice_successful_create)
+      redirect_to project_spelling_prefixes_path(@project)
+    end
   end
 
   def show
