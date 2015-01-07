@@ -1,0 +1,13 @@
+.spelling_prefixes th .current {
+  padding-right: 12px;
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+
+.spelling_prefixes th .asc {
+  background-image: url(../../../images/sort_asc.png);
+}
+
+.spelling_prefixes th .desc {
+  background-image: url(../../../images/sort_desc.png);
+}

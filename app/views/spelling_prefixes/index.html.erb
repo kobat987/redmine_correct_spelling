@@ -1,3 +1,5 @@
+<%= stylesheet_link_tag 'spelling_prefixes', :plugin => 'redmine_correct_spelling' %>
+
 <div class="contextual">
   <%= link_to_if_authorized(l(:label_spelling_prefixes_new),
       {:action => 'new', :project_id => @project},
@@ -9,12 +11,12 @@
 <% if @spelling_prefixes.blank? %>
   <p class="nodata"><%= l(:label_no_data) %></p>
 <% else %>
-  <table class="list">
+  <table class="list spelling_prefixes">
     <thead>
       <tr>
-        <th style="width:50px;">#</th>
+        <th style="width:50px;"><%= sortable "id", "#" %></th>
         <th style="width:50px;">&nbsp;</th>
-        <th style="width:100px;"><%=h l(:field_yomi) %></th>
+        <th style="width:100px;"><%= sortable "yomi", "よみ（ひらがな）" %></th>
         <th style="width:200px;"><span style="color:#5BCE14;"><%=h l(:field_spell_ok) %></span></th>
         <th style="width:200px;"><span style="color:#E80000;"><%=h l(:field_spell_ng) %></span></th>
         <th><%=h l(:field_example) %></th>
