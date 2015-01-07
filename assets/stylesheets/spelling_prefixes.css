@@ -11,3 +11,10 @@
 .spelling_prefixes th .desc {
   background-image: url(../../../images/sort_desc.png);
 }
+
+div .input-area {
+  margin-bottom: 2em;
+  padding: 10px;
+  background-color: #eeeeee;
+  
+}

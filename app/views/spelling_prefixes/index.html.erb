@@ -1,12 +1,14 @@
 <%= stylesheet_link_tag 'spelling_prefixes', :plugin => 'redmine_correct_spelling' %>
 
-<div class="contextual">
-  <%= link_to_if_authorized(l(:label_spelling_prefixes_new),
-      {:action => 'new', :project_id => @project},
-      :class => 'icon icon-add') %>
-</div>
-
 <h2><%=h l(:label_spelling) %></h2>
+
+<div class="input-area">
+<%= labelled_form_for :spelling_prefix, @spelling_prefix,
+    :url => project_spelling_prefixes_path(@project) do |f| %>
+  <%= render :partial => 'spelling_prefixes/form', :locals => {:form => f} %>
+  <%= f.submit l(:button_create) %>
+<% end %>
+</div>
 
 <% if @spelling_prefixes.blank? %>
   <p class="nodata"><%= l(:label_no_data) %></p>
