@@ -10,10 +10,10 @@ Redmineの各プロジェクトに、「表記ゆれ辞典」（表記統一辞�
 
 「ID（＃）」と「よみ（ひらがな）」で昇順・降順のソートができます。
 
-## Screenshot
+## スクリーンショット
 ![screenshot](http://otsukare-tion.com/wp-content/uploads/2015/01/redmine_correct_spelling_screenshot1.jpg)
 
-## Install
+## インストール方法
 
 1. プラグインファイルをRedmineインストールフォルダの下の plugins に展開します。
 2. bundle exec rake redmine:plugins:migrate RAILS_ENV=production を実行します。
