@@ -20,6 +20,9 @@ class SpellingPrefixesController < ApplicationController
     if @spelling_prefix.save
       flash[:notice] = l(:notice_successful_create)
       redirect_to project_spelling_prefixes_path(@project)
+    else
+      flash[:error] = "「よみ（ひらがな）」と「OK表記」は必ず入力してください。"
+      redirect_to project_spelling_prefixes_path(@project)
     end
   end
 
