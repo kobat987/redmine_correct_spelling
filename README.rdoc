@@ -1,5 +1,5 @@
 
-# Redmine表記ゆれ辞典プラグイン（redmine correct spelling plugin）
+# Redmine表記ゆれ辞典プラグイン（redmine correct spelling plugin） #
 ---
 Redmineの各プロジェクトに、「表記ゆれ辞典」（表記統一辞典）を追加するプラグインです。
 各プロジェクトで表記を統一したい場合や、
